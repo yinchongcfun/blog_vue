@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'api','namespace'=>'Api'], function () {
+    //   首页
+    Route::get('index', [ 'uses' => 'IndexController@indexList', 'as' => 'index.list' ]);
+});
