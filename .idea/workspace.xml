@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="236f811e-c174-41a6-85d8-f9bddb221871" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/blog_vue.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/Analyzer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/Analyzer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureContext.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureScope.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureScope.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureStream.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ClosureStream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ISecurityProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ISecurityProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SecurityException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SecurityException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SecurityProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SecurityProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SelfReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SelfReference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" afterDir="false" />
-    </list>
+    <list default="true" id="236f811e-c174-41a6-85d8-f9bddb221871" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +32,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitattributes" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -203,32 +186,6 @@
             <path>
               <item name="blog_vue" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog_vue" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_vue" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_vue" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_vue" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog_vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog_vue" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -249,6 +206,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -278,7 +240,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627000" />
+    <option name="totallyTimeSpent" value="928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -293,7 +255,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31027254" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2557652" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -355,6 +317,12 @@
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
