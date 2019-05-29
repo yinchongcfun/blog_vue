@@ -37,7 +37,8 @@
             "App\\": "app/"
         },
         "files": [
-            "app/help.php"
+            "app/help.php",
+            "app/const.php"
         ],
         "classmap": [
             "database/seeds",
