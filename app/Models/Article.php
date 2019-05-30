@@ -13,4 +13,6 @@ class Article extends BaseModel
 {
     protected $guarded = [];
 
+    protected $table = 'article';
+
 }
