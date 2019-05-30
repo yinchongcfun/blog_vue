@@ -8,14 +8,11 @@
 
 </head>
 <body>
-{!!$content!!}
+
 <form method="post" action="{{route('admin.gethtml')}}">
 
-
-    <div id="doc-content">
-    <textarea style="display:none;">
-
-    </textarea>
+    <div id="doc-content" style="text-align: center">
+        {!!$content!!}
     </div>
     {{--@include('markdown::decode',['editors'=>['doc-content']])--}}
 </form>

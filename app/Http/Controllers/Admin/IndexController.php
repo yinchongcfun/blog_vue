@@ -45,9 +45,9 @@ class IndexController extends Controller
     {
         $article_id=$request->id;
         $data=Article::where('id',$article_id)->first();
-//        $content= MarkdownEditor::parse($data->content);
+        $content= MarkdownEditor::parse($data->content);
         $data=[
-            'content'=>$data->content,
+            'content'=>$content,
             'title'=>111,
             'category_id'=>1
         ];
