@@ -10,23 +10,14 @@ namespace App\Http\Controllers\Web;
 
 
 use App\Http\Controllers\Controller;
-use App\Jobs\Queue;
-use App\Models\Article;
+
 
 class IndexController extends Controller
 {
 
     public function index()
     {
-        $data=Article::get();
-        foreach ($data as $item) {
-            $this->dispatch(new Queue($item));
-        }
-        return response()->json(['code'=>0, 'msg'=>"success"]);
+        return view('index');
     }
-    
-    public function AdImg()
-    {
-        
-    }
+
 }
