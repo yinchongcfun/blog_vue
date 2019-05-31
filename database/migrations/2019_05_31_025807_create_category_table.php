@@ -14,9 +14,8 @@ class CreateCategoryTable extends Migration
     public function up()
     {
         Schema::create('category', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('article_id')->comment('文章id');
-            $table->string('category_name')->default('')->comment('分类名称');
+            $table->bigIncrements('id');
+            $table->string('category_name')->default('')->comment('导航名称');
             $table->boolean('status')->default('1')->comment('0删除，1存在');
             $table->softDeletes();
             $table->timestamps();
@@ -30,6 +29,6 @@ class CreateCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('nav');
     }
 }

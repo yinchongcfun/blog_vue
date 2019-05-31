@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNavTable extends Migration
+class CreateTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateNavTable extends Migration
      */
     public function up()
     {
-        Schema::create('nav', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('category_name')->default('')->comment('导航名称');
-            $table->string('link')->default('')->comment('导航对应链接');
+        Schema::create('tag', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tag_name')->default('')->comment('标签名称');
             $table->boolean('status')->default('1')->comment('0删除，1存在');
             $table->softDeletes();
             $table->timestamps();
@@ -30,6 +29,6 @@ class CreateNavTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nav');
+        Schema::dropIfExists('category');
     }
 }

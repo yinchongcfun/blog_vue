@@ -9,9 +9,9 @@
 namespace App\Models;
 
 
-class Nav extends BaseModel
+class Tag extends BaseModel
 {
     protected $guarded = [];
-    protected $table = 'nav';
+    protected $table = 'tag';
 
 }

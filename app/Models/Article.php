@@ -15,4 +15,13 @@ class Article extends BaseModel
 
     protected $table = 'article';
 
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
+    }
 }
