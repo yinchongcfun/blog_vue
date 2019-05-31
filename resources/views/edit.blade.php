@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{asset('vendor/markdown/css/editormd.min.css')}}" />
+    <style>
+        .prettyprinted{
+            width: 800px;
+        }
+    </style>
 </head>
 <body>
-
-<form method="post" action="{{route('admin.gethtml')}}">
-
-    <div id="doc-content" style="text-align: center">
-        {!!$content!!}
-    </div>
-    {{--@include('markdown::decode',['editors'=>['doc-content']])--}}
-</form>
+<div style="margin:0 auto;">
+    <form method="post" action="{{route('admin.gethtml')}}"  >
+        <div id="doc-content">
+            {!!$content!!}
+        </div>
+        @include('markdown::decode',['editors'=>['doc-content']])
+    </form>
+</div>
 
 </body>
-
-<script>
-    var testEditor = editormd("test-editormd", {
-        width: "90%",
-        height: 640,
-        path: "../vendor/markdown/lib/",
-        saveHTMLToTextarea: true
-    });
-    testEditor.getHTML();// 获取 Textarea 保存的 HTML 源码
-</script>
 </html>
