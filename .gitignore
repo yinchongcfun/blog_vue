@@ -18,3 +18,7 @@ composer.lock
 /public/css/app.css
 /public/mix-manifest.json
 /public/fonts
+
+package\.json
+
+package-lock\.json
