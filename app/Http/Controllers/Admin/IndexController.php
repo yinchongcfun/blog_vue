@@ -33,7 +33,6 @@ class IndexController extends Controller
             'category_id'=>1
         ];
         $article=Article::create($params);
-
         if($article){
             return $this->output(null, '请求成功', STATUS_OK);
         }else{

@@ -9,11 +9,11 @@
         @foreach($editors as $editor)
         editormd.markdownToHTML("{{$editor}}", {
             htmlDecode: "style,script,iframe",
-            emoji: false,
+            emoji: true,
             taskList: true,
             tex: false, // 默认不解析
             flowChart: false, // 默认不解析
-            sequenceDiagram: false, // 默认不解析
+            sequenceDiagram: true, // 默认不解析
             codeFold: true,
         });
         @endforeach
