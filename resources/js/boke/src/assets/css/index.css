@@ -1,0 +1,152 @@
+.question-container{
+  margin: 25px;
+}
+.header{
+    height: 70px;
+    font-size: 22px;
+    padding: 0 25px;
+    background: #fff;
+}
+.header i{
+  font-size: 22px;
+  display: inline-block;
+}
+.swiper{
+  margin-top: 25px;
+}
+.swiper img{
+  width: 100%;
+}
+.swiper p{
+  height: 300px;
+  background: #fff;
+}
+.van-swipe{
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+.van-swipe__indicators .van-swipe__indicator{
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #000;
+}
+.van-swipe__indicators .van-swipe__indicator--active{
+  width: 4px;
+  height: 4px;
+  border: 4px solid #000;
+  background: #fff;
+}
+.questions{
+  background: #fff;
+  margin: 25px 0;
+  text-align: center;
+  box-shadow: 0 0 2px #e1e1e1;
+}
+.questions img{
+  width: 100%;
+}
+.questions-detail{
+  padding: 20px;
+}
+.questions-detail p{
+  margin-bottom: 20px;
+}
+.questions-detail p:nth-child(1){
+  color: #1c2489;
+  font-weight: bold;
+}
+.questions-detail p:nth-child(2){
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+.questions-detail p:nth-child(3){
+  color: #393939;
+  margin-bottom: 0;
+}
+
+.footer{
+  padding: 25px;
+  background: #fff;
+}
+.title-m{
+  line-height: 40px;
+  margin-left: -10px;
+  border-top: 1px solid #e0e0e0;
+  font-weight: bold;
+}
+.title-m span{
+  line-height: 1;
+  padding-left: 10px; 
+  border-left: 3px solid #208ffd;
+}
+.title>div{
+  line-height: 40px;
+}
+.title>p{
+  line-height: 40px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.title>p:last-child{
+  border: 0;
+}
+.footer-copy{
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  background: #1d2255;
+}
+.nav{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 111;
+}
+.title-l{
+  font-size: 16px;
+  margin-left: 25px;
+  line-height: 50px;
+}
+.title-l:nth-child(1){
+  font-weight: bold;
+}
+.title-l:last-child{
+  border: 0;
+}
+.to-top{
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.to-top i{
+  font-size: 28px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+/* 导航 */
+.close{
+  font-size: 28px;
+  text-align: center;
+  margin: 25px 0;
+}
+.close i{
+  font-size: 28px;
+}
+.nav .van-collapse{
+  margin-left: 25px;
+}
