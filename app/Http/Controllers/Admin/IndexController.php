@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 
-    public function index()
+    public function add()
     {
         return view('index');
     }
