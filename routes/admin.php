@@ -9,7 +9,7 @@ Route::group(['namespace' => 'Admin'], function () {
 });
 
 
-Route::group(['namespace' => 'Admin','prefix'=>'admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
 
     Route::get('add', ['uses' => 'IndexController@add', 'as' => 'admin.add']);
 

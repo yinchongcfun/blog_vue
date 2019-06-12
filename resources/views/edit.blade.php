@@ -14,13 +14,15 @@
 </head>
 <body>
 <div style="margin:0 auto;">
-    <form method="post" action="{{route('admin.gethtml')}}"  >
-        <div id="doc-content">
-            {!!$content!!}
-        </div>
-        @include('markdown::decode',['editors'=>['doc-content']])
-    </form>
-</div>
+
+
+        <form method="post" action="{{route('admin.gethtml')}}"  >
+            <div id="doc-content">
+                {!!$content!!}
+            </div>
+            @include('markdown::decode',['editors'=>['doc-content']])
+        </form>
+    </div>
 
 </body>
 </html>

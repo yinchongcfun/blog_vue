@@ -15,5 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['namespace' => 'Web'], function () {
 
-
+    Route::get('/test1', 'IndexController@test');
+    Route::get('/test2','Indexontroller@test2');
+});
