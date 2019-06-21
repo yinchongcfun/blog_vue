@@ -31,7 +31,6 @@ class AuthController extends Controller
         if (!$token = auth('admin')->attempt($credentials)) {
             return $this->output(null, 'Unauthorized', ERR_REQUEST);
         }
-        $info=phpinfo();
         return $this->output($token, '请求成功', STATUS_OK);
     }
 
@@ -54,6 +53,11 @@ class AuthController extends Controller
 
     }
 
+
+    public function phpinfo()
+    {
+        echo $this->phpinfo();
+    }
 
     /**
      * Get the authenticated User.
