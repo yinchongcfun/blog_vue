@@ -24,7 +24,6 @@ class IndexController extends Controller
     }
 
 
-
     public function getHtml(Request $request)
     {
         $content = $request->input('test-editormd-html-code');
