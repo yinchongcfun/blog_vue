@@ -20,6 +20,6 @@ Route::group(['namespace' => 'Web'], function () {
     Route::get('/test2','Indexontroller@test2');
 });
 
-Route::group(['namespace' => 'Admin'], function () {
-    Route::get('phpinfo', 'AuthController@phpinfo');
+Route::group(['namespace' => 'Web'], function () {
+    Route::get('phpinfo', 'IndexController@phpinfo');
 });
