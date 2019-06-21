@@ -54,11 +54,6 @@ class AuthController extends Controller
     }
 
 
-    public function phpinfo()
-    {
-        echo $this->phpinfo();
-    }
-
     /**
      * Get the authenticated User.
      *

@@ -18,6 +18,12 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 
+    public function phpinfo()
+    {
+        echo phpinfo();
+    }
+
+
     public function test(Request $request)
     {
         return view('test');#在你的视图文件夹创建test.blade.php

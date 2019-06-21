@@ -18,6 +18,7 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+
     //列表
     public function list(Request $request)
     {
