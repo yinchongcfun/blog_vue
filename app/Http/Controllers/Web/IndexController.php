@@ -46,4 +46,29 @@ class IndexController extends Controller
         ];
         return view('edit',$data);
     }
+
+
+    //列表
+    public function list(Request $request)
+    {
+        $params=$request->only('is_hot','category_id');
+        $hot_article= Article::select('id','title','cover','category_id')->with('category')->with('tags')
+            ->where('status',1)
+            ->where($params)
+            ->paginate(2);
+        return $this->output($hot_article, '请求成功', STATUS_OK);
+    }
+    //分类
+    public function category()
+    {
+        $category= Category::where('status',1)->get();
+        return $this->output($category, '请求成功', STATUS_OK);
+    }
+
+    //标签
+    public function tag()
+    {
+        $category= Tag::where('status',1)->get();
+        return $this->output($category, '请求成功', STATUS_OK);
+    }
 }

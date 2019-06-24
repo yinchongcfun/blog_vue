@@ -18,19 +18,18 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 
-    public function add()
+    public function __construct()
     {
-        return view('index');
+        $this->middleware('auth:admin');
     }
 
-
-
-    public function getHtml(Request $request)
+    public function add(Request $request)
     {
         $content = $request->input('test-editormd-html-code');
         $params=[
             'content'=>$content,
-            'category_id'=>1
+            'category_id'=>$request->category_id??'',
+            'tags'=>$request->tags??''
         ];
         $article=Article::create($params);
         if($article){
@@ -38,18 +37,16 @@ class IndexController extends Controller
         }else{
             return $this->output(null, '请求失败', ERR_REQUEST);
         }
+
     }
+
 
     public function edit(Request $request)
     {
         $article_id=$request->id;
         $data=Article::where('id',$article_id)->first();
         $content= MarkdownEditor::parse($data->content);
-        $data=[
-            'content'=>$content,
-            'title'=>111,
-            'category_id'=>1
-        ];
-        return view('edit',$data);
+        $data->content=$content??'';
+        return $this->output($data, '请求成功', STATUS_OK);
     }
 }
