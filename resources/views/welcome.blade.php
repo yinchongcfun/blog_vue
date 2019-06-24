@@ -64,12 +64,12 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height" style="background: url('http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg')">
+        <div class="flex-center position-ref full-height"
+             style="background: url('http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg');background-size:100% 100%">
             <div class="content">
                 <div class="title m-b-md">
                     C.Fun
                 </div>
-
                 <div class="links">
                     <a href="#">Docs</a>
                     <a href="#">News</a>
