@@ -74,7 +74,7 @@
                     <a href="#">Docs</a>
                     <a href="#">News</a>
                     <a href="#">Blog</a>
-                    <a href="#">Forge</a>
+                    <a href="#">Email</a>
                     <a href="#">GitHub</a>
                 </div>
             </div>

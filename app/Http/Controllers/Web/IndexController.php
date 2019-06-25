@@ -17,23 +17,6 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-
-    public function phpinfo()
-    {
-        echo phpinfo();
-    }
-
-
-    public function test(Request $request)
-    {
-        return view('test');#在你的视图文件夹创建test.blade.php
-    }
-
-    public function test2(Request $request)
-    {
-        return 'Hello World2:' . $request->get('name');
-    }
-
     //文章详情
     public function detail(Request $request)
     {
