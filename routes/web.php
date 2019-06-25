@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::group(['namespace' => 'Web'], function () {
 
-    Route::get('/test1', 'IndexController@test');
-    Route::get('/test2','Indexontroller@test2');
+    Route::get('list', ['uses' => 'IndexController@list', 'as' => 'blog.list']);
+
+    Route::get('category', ['uses' => 'IndexController@category', 'as' => 'blog.category']);
+
+    Route::get('tag', ['uses' => 'IndexController@tag', 'as' => 'blog.tag']);
 });

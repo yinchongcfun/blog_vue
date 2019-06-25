@@ -21,18 +21,16 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('jwt:admin', [ 'except' => [ 'login', 'register' ] ]);
+        $this->middleware('api:admin', [ 'except' => [ 'login', 'register' ] ]);
     }
 
 
     public function login(Request $request)
     {
-//        $credentials = request([ 'email', 'password' ]);
-//        if (!$token = auth('admin')->attempt($credentials)) {
-//            return $this->output(null, 'Unauthorized', ERR_REQUEST);
-//        }
-        $info=phpinfo();
-        dd($info);
+        $credentials = request([ 'email', 'password' ]);
+        if (!$token = auth('admin')->attempt($credentials)) {
+            return $this->output(null, 'Unauthorized', ERR_REQUEST);
+        }
         return $this->output($token, '请求成功', STATUS_OK);
     }
 
