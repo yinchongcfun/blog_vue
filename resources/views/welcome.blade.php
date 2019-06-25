@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>C.Fun</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -65,7 +65,7 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height"
-             style="background: url('http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg');background-size:100% 100%">
+             style="background: url('http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg')">
             <div class="content">
                 <div class="title m-b-md">
                     C.Fun
