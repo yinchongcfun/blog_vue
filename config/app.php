@@ -176,6 +176,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         SwooleTW\Http\LaravelServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
 
     ],
 
