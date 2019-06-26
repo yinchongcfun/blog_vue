@@ -31,7 +31,7 @@ class AuthController extends Controller
         if (!$token = auth('admin')->attempt($credentials)) {
             return $this->output(null, 'Unauthorized', ERR_REQUEST);
         }
-        return $this->output(base64_encode($token), '请求成功', STATUS_OK);
+        return $this->output($token, '请求成功', STATUS_OK);
     }
 
     public function register(RegisterRequest $request)
@@ -45,7 +45,7 @@ class AuthController extends Controller
         $token = JWTAuth::fromUser($user);
         if ($user && $token) {
             DB::commit();
-            return $this->output(base64_encode($token), '请求成功', STATUS_OK);
+            return $this->output($token, '请求成功', STATUS_OK);
         } else {
             DB::rollBack();
             return $this->output(null, '请求失败', ERR_REQUEST);
