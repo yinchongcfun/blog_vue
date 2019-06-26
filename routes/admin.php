@@ -7,7 +7,7 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::post('refresh', 'AuthController@refresh');
 });
 
-Route::group(['middleware' => 'auth:admin','namespace' => 'Admin'], function () {
+Route::group(['namespace' => 'Admin'], function () {
     //文章添加
     Route::get('add', ['uses' => 'IndexController@add', 'as' => 'admin.add']);
     //文章编辑
