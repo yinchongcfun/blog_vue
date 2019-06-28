@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::group(['namespace' => 'Web'], function () {
 
-    Route::get('list', ['uses' => 'IndexController@list', 'as' => 'blog.list']);
+    Route::get('index', ['uses' => 'IndexController@list', 'as' => 'blog.index']);
 
     Route::get('category', ['uses' => 'IndexController@category', 'as' => 'blog.category']);
 
