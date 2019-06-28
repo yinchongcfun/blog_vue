@@ -38,6 +38,7 @@ class IndexController extends Controller
 
     public function edit(ArticleIdRequest $request)
     {
+
         $data=Article::where('id',$request->id)->first();
         $content= MarkdownEditor::parse($data->content);
         $data->content=$content??'';

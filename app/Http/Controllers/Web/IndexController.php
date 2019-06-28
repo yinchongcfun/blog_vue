@@ -43,17 +43,5 @@ class IndexController extends Controller
             ->paginate(2);
         return $this->output($hot_article, '请求成功', STATUS_OK);
     }
-    //分类
-    public function category()
-    {
-        $category= Category::where('status',1)->get();
-        return $this->output($category, '请求成功', STATUS_OK);
-    }
 
-    //标签
-    public function tag()
-    {
-        $category= Tag::where('status',1)->get();
-        return $this->output($category, '请求成功', STATUS_OK);
-    }
 }

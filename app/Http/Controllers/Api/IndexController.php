@@ -10,13 +10,22 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
-use Chenhua\MarkdownEditor\MarkdownEditor;
-use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    //分类
+    public function category()
+    {
+        $category= Category::where('status',1)->get();
+        return $this->output($category, '请求成功', STATUS_OK);
+    }
 
+    //标签
+    public function tag()
+    {
+        $category= Tag::where('status',1)->get();
+        return $this->output($category, '请求成功', STATUS_OK);
+    }
 }
