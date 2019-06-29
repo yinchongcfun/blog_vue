@@ -29,7 +29,6 @@ class ArticleIdRequest extends RequestBase
     {
         $rules = [
             'id'    => 'required |exists:article,id',
-            'password' => 'required',
         ];
 
         return $rules;
