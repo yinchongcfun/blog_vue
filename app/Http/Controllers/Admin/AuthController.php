@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Jobs\Queue;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -40,6 +41,9 @@ class AuthController extends Controller
             'email'    => $request->email,
             'password' => bcrypt($request->password),
         ];
+        //注册发送邮件
+
+        $this->dispatch(new Queue($request->emai));
         DB::beginTransaction();
         $user = User::create($data);
         $token = JWTAuth::fromUser($user);

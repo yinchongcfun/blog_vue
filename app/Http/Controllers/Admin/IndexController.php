@@ -18,6 +18,11 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    public function phpInfo()
+    {
+        echo phpinfo();
+    }
+
     public function add(Request $request)
     {
         $content = $request->input('test-editormd-html-code');
