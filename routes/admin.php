@@ -5,6 +5,7 @@ Route::group(['namespace' => 'Admin'], function () {
         Route::post('register', 'AuthController@register');
         Route::post('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
+        Route::post('sendemail', 'AuthController@sendEmail');
 });
 
 Route::group(['namespace' => 'Admin'], function () {

@@ -8,6 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redis;
 
 class Queue implements ShouldQueue
 {
@@ -33,7 +34,9 @@ class Queue implements ShouldQueue
     public function handle()
     {
         try{
-            Mail::raw('这里填写邮件的内容',function ($message){
+            $rand_num=$this->random(6,0);
+            Redis::set($this->email,$rand_num,60);
+            Mail::raw($rand_num,function ($message){
                 // 发件人（你自己的邮箱和名称）
                 $message->from('1606548133@qq.com', 'cfun');
                 // 收件人的邮箱地址
@@ -45,5 +48,19 @@ class Queue implements ShouldQueue
             echo json_encode(['code'=>0,'msg'=>$exception->getMessage()]);
         }
 
+    }
+
+
+    function random($length, $numeric = 0)
+    {
+        $seed = base_convert(md5(microtime() . $_SERVER['DOCUMENT_ROOT']), 16, $numeric ? 10 : 35);
+        $seed = $numeric ? (str_replace('0', '', $seed) . '012340567890') : ($seed . 'zZ' . strtoupper($seed));
+        $hash = '';
+        $max = strlen($seed) - 1;
+        for ($i = 0; $i < $length; $i++) {
+            $hash .= $seed{mt_rand(0, $max)};
+        }
+
+        return $hash;
     }
 }
