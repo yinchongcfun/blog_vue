@@ -9,7 +9,7 @@ Route::group(['namespace' => 'Admin'], function () {
 
 Route::group(['namespace' => 'Admin'], function () {
     //文章添加
-    Route::get('pathinfo', ['uses' => 'IndexController@pathInfo', 'as' => 'admin.pathinfo']);
+    Route::get('phpinfo', ['uses' => 'IndexController@phpInfo', 'as' => 'admin.phpinfo']);
     //文章添加
     Route::get('add', ['uses' => 'IndexController@add', 'as' => 'admin.add']);
     //文章编辑
