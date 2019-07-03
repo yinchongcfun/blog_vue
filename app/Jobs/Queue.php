@@ -23,7 +23,7 @@ class Queue implements ShouldQueue
     public function __construct($email)
     {
         //
-        $this->user=$email;
+        $this->email=$email;
     }
 
     /**
@@ -36,7 +36,7 @@ class Queue implements ShouldQueue
         try{
             $rand_num=$this->random(6,0);
             Mail::raw($rand_num, function ($message) {
-                $message ->to($this->user)->subject('纯文本信息邮件测试');
+                $message ->to($this->email)->subject('纯文本信息邮件测试');
             });
 
         }catch (\Exception $exception) {
