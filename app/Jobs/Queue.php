@@ -35,14 +35,10 @@ class Queue implements ShouldQueue
     {
         try{
             $rand_num=$this->random(6,0);
-            Mail::raw($rand_num,function ($message){
-                // 发件人（你自己的邮箱和名称）
-                $message->from('1606548133@qq.com', 'cfun');
-                // 收件人的邮箱地址
-                $message->to($this->email);
-                // 邮件主题
-                $message->subject('cfun博客注册验证');
+            Mail::raw($rand_num, function ($message) {
+                $message ->to($this->user)->subject('纯文本信息邮件测试');
             });
+
         }catch (\Exception $exception) {
             echo json_encode(['code'=>0,'msg'=>$exception->getMessage()]);
         }
