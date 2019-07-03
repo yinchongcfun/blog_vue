@@ -35,7 +35,6 @@ class Queue implements ShouldQueue
     {
         try{
             $rand_num=$this->random(6,0);
-            Redis::set($this->email,$rand_num,60);
             Mail::raw($rand_num,function ($message){
                 // 发件人（你自己的邮箱和名称）
                 $message->from('1606548133@qq.com', 'cfun');
