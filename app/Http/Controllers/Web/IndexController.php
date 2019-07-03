@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Web;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ArticleIdRequest;
 use App\Models\Article;
 use Chenhua\MarkdownEditor\MarkdownEditor;
 use Illuminate\Http\Request;
@@ -22,14 +23,12 @@ class IndexController extends Controller
     {
         $article_id=$request->id;
         $data=Article::where('id',$article_id)->first();
-        $content= MarkdownEditor::parse($data->content);
-        $data=[
-            'content'=>$content,
-            'data'=>$data,
-        ];
-        return view('edit',$data);
+        if($data){
+            return $this->output(null, '请求成功', STATUS_OK);
+        }else{
+            return $this->output(null, '请求失败', ERR_REQUEST);
+        }
     }
-
 
     //列表
     public function list(Request $request)
