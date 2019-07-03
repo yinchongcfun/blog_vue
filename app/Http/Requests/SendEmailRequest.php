@@ -9,7 +9,7 @@
 namespace App\Http\Requests;
 
 
-class ArticleIdRequest extends RequestBase
+class SendEmailRequest extends RequestBase
 {
 
     /**
@@ -28,7 +28,7 @@ class ArticleIdRequest extends RequestBase
     public function rules()
     {
         $rules = [
-            'id'    => 'required |exists:article,id',
+            'email'    => 'required |email|unique:users,email',
         ];
 
         return $rules;
@@ -40,8 +40,9 @@ class ArticleIdRequest extends RequestBase
     public function messages()
     {
         $message = [
-            'id.required'    => '文章id必须填写',
-            'id.exists'       => '文章id不存在',
+            'email.required'    => 'email必须填写',
+            'email.email'       => 'email格式不正确',
+            'email.unique'      => '该邮箱已经注册过了！',
         ];
 
         return $message;

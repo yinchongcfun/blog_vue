@@ -18,7 +18,7 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
-                background: url('http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg')
+                background: url("http://img4.youxiake.com/yxk_1de4aee58ti51n8srsr123rfku0.jpg")
             }
 
             .full-height {
