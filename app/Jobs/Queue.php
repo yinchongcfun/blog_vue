@@ -35,7 +35,7 @@ class Queue implements ShouldQueue
     {
         try{
             $rand_num=$this->random(6,0);
-            Redis::set($this->email,$rand_num);
+            Redis::setex($this->email,$rand_num,60);
             Mail::send('emails.orders.shipped',['name'=>'cfun','rand_num'=>$rand_num],function($msg){
                 $msg->from('1606548133@qq.com','cfun');
                 $msg->subject('cfun博客邮箱验证');
