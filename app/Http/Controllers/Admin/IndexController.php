@@ -31,7 +31,7 @@ class IndexController extends Controller
             'category_id'=>$request->category_id??'',
             'tags'=>$request->tags??''
         ];
-        $article=Article::create($params);
+        $article=Article::updateOrCreate([ 'id' => $request->id ],$params);
         if($article){
             return $this->output(null, '请求成功', STATUS_OK);
         }else{
@@ -41,7 +41,7 @@ class IndexController extends Controller
     }
 
 
-    public function edit(ArticleIdRequest $request)
+    public function detail(ArticleIdRequest $request)
     {
 
         $data=Article::where('id',$request->id)->first();
