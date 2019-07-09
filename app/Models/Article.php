@@ -9,8 +9,12 @@
 namespace App\Models;
 
 
+use Laravel\Scout\Searchable;
+
 class Article extends BaseModel
 {
+    use Searchable;
+
     protected $guarded = [];
 
     protected $table = 'article';
@@ -24,4 +28,13 @@ class Article extends BaseModel
     {
         return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
     }
+
+    public function toSearchableArray()
+    {
+        return [
+            'title' => $this->title,
+            'content' => $this->content
+        ];
+    }
+
 }

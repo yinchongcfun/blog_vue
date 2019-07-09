@@ -22,4 +22,6 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('detail', ['uses' => 'IndexController@detail', 'as' => 'blog.detail']);
 
+    Route::get('search', ['uses' => 'IndexController@search', 'as' => 'blog.search']);
+
 });

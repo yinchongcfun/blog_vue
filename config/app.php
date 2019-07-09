@@ -177,7 +177,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         SwooleTW\Http\LaravelServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-
+        Laravel\Scout\ScoutServiceProvider::class,
+        ScoutEngines\Elasticsearch\ElasticsearchProvider::class
     ],
 
     /*
