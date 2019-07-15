@@ -25,7 +25,7 @@ class IndexController extends Controller
 
     public function add(Request $request)
     {
-        $content = $request->input('test-editormd-html-code');
+        $content = $request->input('content');
         $params=[
             'content'=>$content,
             'category_id'=>$request->category_id??'',
