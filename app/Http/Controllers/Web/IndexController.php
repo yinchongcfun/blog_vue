@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     //文章详情
-    public function detail(Request $request)
+    public function detail(ArticleIdRequest $request)
     {
         $article_id=$request->id;
         $data=Article::where('id',$article_id)->first();
@@ -39,7 +39,7 @@ class IndexController extends Controller
             ->with('tags')
             ->where('status',1)
             ->where($params)
-            ->paginate(2);
+            ->paginate(4);
         return $this->output($hot_article, '请求成功', STATUS_OK);
     }
 

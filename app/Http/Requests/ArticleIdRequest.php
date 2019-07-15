@@ -40,8 +40,8 @@ class ArticleIdRequest extends RequestBase
     public function messages()
     {
         $message = [
-            'id.required'    => '文章id必须填写',
-            'id.exists'       => '文章id不存在',
+            'id.required'    => '文章ID必须填写',
+            'id.exists'       => '文章不存在',
         ];
 
         return $message;
