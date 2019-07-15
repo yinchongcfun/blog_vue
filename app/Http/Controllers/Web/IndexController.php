@@ -39,7 +39,7 @@ class IndexController extends Controller
             ->with('tags')
             ->where('status',1)
             ->where($params)
-            ->paginate(3);
+            ->paginate(4);
         return $this->output($hot_article, '请求成功', STATUS_OK);
     }
 
