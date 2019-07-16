@@ -27,8 +27,8 @@ class IndexController extends Controller
     {
         $content = $request->input('content');
         $params=[
+            'title'=>$request->title,
             'content'=>$content,
-            'category_id'=>$request->category_id??'',
             'tags'=>$request->tags??''
         ];
         $article=Article::updateOrCreate([ 'id' => $request->id ],$params);
