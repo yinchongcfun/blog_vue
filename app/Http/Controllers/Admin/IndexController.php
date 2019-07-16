@@ -29,7 +29,8 @@ class IndexController extends Controller
         $params=[
             'title'=>$request->title,
             'content'=>$content,
-            'tags'=>$request->tags??''
+            'tags'=>$request->tags??'',
+            'cover'=>$request->cover??''
         ];
         $article=Article::updateOrCreate([ 'id' => $request->id ],$params);
         if($article){
