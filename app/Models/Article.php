@@ -13,11 +13,13 @@ use Laravel\Scout\Searchable;
 
 class Article extends BaseModel
 {
-    use Searchable;
+//    use Searchable;
 
     protected $guarded = [];
 
     protected $table = 'article';
+
+    protected $fillable=['title','content','tags','cover'];
 
     public function category()
     {
@@ -29,12 +31,12 @@ class Article extends BaseModel
         return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
     }
 
-    public function toSearchableArray()
-    {
-        return [
-            'title' => $this->title,
-            'content' => $this->content
-        ];
-    }
+//    public function toSearchableArray()
+//    {
+//        return [
+//            'title' => $this->title,
+//            'content' => $this->content
+//        ];
+//    }
 
 }

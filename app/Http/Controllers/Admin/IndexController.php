@@ -29,10 +29,11 @@ class IndexController extends Controller
         $params=[
             'title'=>$request->title,
             'content'=>$content,
-            'tags'=>$request->tags??'',
-            'cover'=>$request->cover??''
+            'tags'=>$request->tags ?? '',
+            'cover'=>$request->cover ?? ''
         ];
-        $article=Article::updateOrCreate([ 'id' => $request->id ],$params);
+
+        $article=Article::updateOrCreate(['id' => $request->id],$params);
         if($article){
             return $this->output(null, '请求成功', STATUS_OK);
         }else{

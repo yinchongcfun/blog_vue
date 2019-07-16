@@ -15,7 +15,6 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         //
-        Commands\Swoole::class,
         \App\Console\Commands\ESinit::class
     ];
 

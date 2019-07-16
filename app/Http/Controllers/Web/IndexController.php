@@ -12,7 +12,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleIdRequest;
 use App\Models\Article;
-use Chenhua\MarkdownEditor\MarkdownEditor;
 use Illuminate\Http\Request;
 
 
