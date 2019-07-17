@@ -1,7 +1,7 @@
 <?php
 
 Route::group(['namespace' => 'Admin'], function () {
-        Route::get('login', 'AuthController@login')->name('login');
+        Route::post('login', 'AuthController@login')->name('login');
         Route::post('register', 'AuthController@register');
         Route::post('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
