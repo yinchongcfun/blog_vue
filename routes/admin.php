@@ -15,5 +15,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::post('add', ['uses' => 'IndexController@add', 'as' => 'admin.add']);
     //文章编辑
     Route::get('detail', ['uses' => 'IndexController@detail', 'as' => 'admin.detail']);
+    //删除文章
+    Route::get('delete', ['uses' => 'IndexController@delete', 'as' => 'admin.delete']);
 });
 

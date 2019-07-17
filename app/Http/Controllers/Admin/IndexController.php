@@ -51,4 +51,10 @@ class IndexController extends Controller
         $data->content=$content??'';
         return $this->output($data, '请求成功', STATUS_OK);
     }
+
+    public function delete(ArticleIdRequest $request)
+    {
+        $data=Article::where('id',$request->id)->delete();
+        return $this->output($data, '请求成功', STATUS_OK);
+    }
 }
