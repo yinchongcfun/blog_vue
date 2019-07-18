@@ -49,7 +49,7 @@ class IndexController extends Controller
 
         $data=Article::where('id',$request->id)->first();
         if($data){
-            return $this->output(null, '请求成功', STATUS_OK);
+            return $this->output($data, '请求成功', STATUS_OK);
         }else{
             return $this->output(null, '请求失败', ERR_REQUEST);
         }
