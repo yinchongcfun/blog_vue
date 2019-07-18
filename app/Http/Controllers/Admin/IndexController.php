@@ -25,6 +25,7 @@ class IndexController extends Controller
 
     public function add(Request $request)
     {
+
         $content = $request->input('content');
         $params=[
             'title'=>$request->title,
@@ -47,8 +48,9 @@ class IndexController extends Controller
     {
 
         $data=Article::where('id',$request->id)->first();
-        $content= MarkdownEditor::parse($data->content);
-        $data->content=$content??'';
+//        $content= MarkdownEditor::parse($data->content);
+//
+//        $data->content=$content??'';
         return $this->output($data, '请求成功', STATUS_OK);
     }
 
