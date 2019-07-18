@@ -48,10 +48,11 @@ class IndexController extends Controller
     {
 
         $data=Article::where('id',$request->id)->first();
-//        $content= MarkdownEditor::parse($data->content);
-//
-//        $data->content=$content??'';
-        return $this->output($data, '请求成功', STATUS_OK);
+        if($data){
+            return $this->output(null, '请求成功', STATUS_OK);
+        }else{
+            return $this->output(null, '请求失败', ERR_REQUEST);
+        }
     }
 
     public function delete(ArticleIdRequest $request)
