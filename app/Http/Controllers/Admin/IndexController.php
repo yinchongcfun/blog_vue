@@ -60,4 +60,11 @@ class IndexController extends Controller
         $data=Article::where('id',$request->id)->delete();
         return $this->output($data, '请求成功', STATUS_OK);
     }
+
+    public function setHot(ArticleIdRequest $request)
+    {
+        $is_hot=$request->is_hot;
+        $data=Article::where('id',$request->id)->update($is_hot);
+        return $this->output($data, '请求成功', STATUS_OK);
+    }
 }

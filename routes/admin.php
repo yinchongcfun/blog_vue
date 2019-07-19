@@ -17,5 +17,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('detail', ['uses' => 'IndexController@detail', 'as' => 'admin.detail']);
     //删除文章
     Route::get('delete', ['uses' => 'IndexController@delete', 'as' => 'admin.delete']);
+    //设置热门
+    Route::get('sethot', ['uses' => 'IndexController@setHot', 'as' => 'admin.sethot']);
 });
 
