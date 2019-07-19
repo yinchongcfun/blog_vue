@@ -33,8 +33,7 @@ class IndexController extends Controller
     public function list(Request $request)
     {
         $params=$request->only('is_hot','category_id');
-        $hot_article= Article::select('id','title','cover','category_id')
-            ->with('category')
+        $hot_article= Article::with('category')
             ->with('tags')
             ->where('status',1)
             ->where($params)
