@@ -19,5 +19,7 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('delete', ['uses' => 'IndexController@delete', 'as' => 'admin.delete']);
     //设置热门
     Route::get('sethot', ['uses' => 'IndexController@setHot', 'as' => 'admin.sethot']);
+    //上传图片
+    Route::match([ 'get', 'post' ],'qiniutoken', [ 'uses' => 'QiniuController@uploadtoken', 'as' => 'qiniu.token' ]);
 });
 
