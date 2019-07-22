@@ -25,15 +25,14 @@ class IndexController extends Controller
 
     public function add(Request $request)
     {
-
         $content = $request->input('content');
         $params=[
             'title'=>$request->title,
             'content'=>$content,
             'tags'=>$request->tags ?? '',
-            'cover'=>$request->cover ?? ''
+            'cover'=>$request->cover ?? '',
+            'desc'=>$request->desc ?? ''
         ];
-
         $article=Article::updateOrCreate(['id' => $request->id],$params);
         if($article){
             return $this->output(null, '请求成功', STATUS_OK);
@@ -46,7 +45,6 @@ class IndexController extends Controller
 
     public function detail(ArticleIdRequest $request)
     {
-
         $data=Article::where('id',$request->id)->first();
         if($data){
             return $this->output($data, '请求成功', STATUS_OK);
@@ -64,7 +62,7 @@ class IndexController extends Controller
     public function setHot(ArticleIdRequest $request)
     {
         $is_hot=$request->is_hot;
-        $data=Article::where('id',$request->id)->update($is_hot);
+        $data=Article::where('id',$request->id)->update(['is_hot'=>$is_hot]);
         return $this->output($data, '请求成功', STATUS_OK);
     }
 }
