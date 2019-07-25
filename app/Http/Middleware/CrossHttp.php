@@ -19,9 +19,6 @@ class CrossHttp
         $response->header('Access-Control-Allow-Origin', '*');
         $response->header('Access-Control-Allow-Headers', 'Origin, Content-Type, Cookie, Accept');
         $response->header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, OPTIONS');
-        if(strtoupper($_SERVER['REQUEST_METHOD'])== 'OPTIONS'){
-            exit;
-        }
         $response->header('Access-Control-Allow-Credentials', 'false');
         return $response;
     }
