@@ -30,5 +30,7 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('star', ['uses' => 'CommentController@star', 'as' => 'blog.star']);
 
+    Route::post('login', 'IndexController@login')->name('login');
 
+    Route::post('register', 'IndexController@register');
 });
