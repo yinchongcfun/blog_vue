@@ -9,13 +9,22 @@
 namespace App\Http\Controllers\Web;
 
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleIdRequest;
 use App\Http\Requests\CommentRequest;
+use App\Models\Article;
 use App\Models\Comments;
 use App\Models\Replay;
 
-class CommentController
+class CommentController extends Controller
 {
+
+    //点赞
+    public function star(ArticleIdRequest $request)
+    {
+        Article::where('id',$request->article_id)->increment('star',1);
+        return $this->output(null, '请求成功', STATUS_OK);
+    }
 
     //评论
     public function comment(ArticleIdRequest $request)

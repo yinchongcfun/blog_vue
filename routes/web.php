@@ -24,9 +24,11 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('search', ['uses' => 'IndexController@search', 'as' => 'blog.search']);
 
-    Route::get('comment', ['uses' => 'CommentController@comment', 'as' => 'blog.comment']);
+    Route::get('comment', ['uses' => 'CommentController@comment', 'as' => 'blog.comment'])->middleware('comment');
 
-    Route::get('replay', ['uses' => 'CommentController@replay', 'as' => 'blog.replay']);
+    Route::get('replay', ['uses' => 'CommentController@replay', 'as' => 'blog.replay'])->middleware('comment');
+
+    Route::get('star', ['uses' => 'CommentController@star', 'as' => 'blog.star']);
 
 
 });
