@@ -14,4 +14,9 @@ class Comments extends BaseModel
     protected $guarded = [];
 
     protected $table = 'comments';
+
+    public function replay()
+    {
+        return $this->hasMany(Replay::class,'comment_id','id');
+    }
 }

@@ -31,12 +31,9 @@ class Article extends BaseModel
         return $this->belongsToMany(Tag::class, 'article_tag', 'article_id', 'tag_id');
     }
 
-//    public function toSearchableArray()
-//    {
-//        return [
-//            'title' => $this->title,
-//            'content' => $this->content
-//        ];
-//    }
+    public function comment()
+    {
+        return $this->hasMany(Comments::class, 'article_id', 'id');
+    }
 
 }
