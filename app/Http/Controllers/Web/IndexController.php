@@ -41,12 +41,4 @@ class IndexController extends Controller
         return $this->output($hot_article, '请求成功', STATUS_OK);
     }
 
-    //列表
-//    public function search(Request $request)
-//    {
-//        $params=$request->keyword;
-//        $article= Article::search($params)->paginate();
-//        return $this->output($article, '请求成功', STATUS_OK);
-//    }
-
 }

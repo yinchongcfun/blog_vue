@@ -24,4 +24,9 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('search', ['uses' => 'IndexController@search', 'as' => 'blog.search']);
 
+    Route::get('comment', ['uses' => 'CommentController@comment', 'as' => 'blog.comment']);
+
+    Route::get('replay', ['uses' => 'CommentController@replay', 'as' => 'blog.replay']);
+
+
 });

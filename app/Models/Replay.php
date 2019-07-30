@@ -9,9 +9,9 @@
 namespace App\Models;
 
 
-class Comments extends BaseModel
+class Replay extends BaseModel
 {
     protected $guarded = [];
 
-    protected $table = 'comments';
+    protected $table = 'replay';
 }
