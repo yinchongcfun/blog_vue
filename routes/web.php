@@ -30,7 +30,10 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::get('star', ['uses' => 'CommentController@star', 'as' => 'blog.star']);
 
-    Route::post('login', 'IndexController@login')->name('login');
+    Route::post('login', 'loginController@login')->name('login');
 
-    Route::post('register', 'IndexController@register');
+    Route::post('register', 'loginController@register');
+
+    Route::post('sendemail', 'loginController@sendEmail');
+
 });
