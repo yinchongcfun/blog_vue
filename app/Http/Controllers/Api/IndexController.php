@@ -12,7 +12,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Tag;
-use http\Env\Request;
+use Illuminate\Http\Request;
+
 
 class IndexController extends Controller
 {
