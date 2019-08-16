@@ -36,6 +36,6 @@ class IndexController extends Controller
     {
         $path = $request->file('img')->store('imgs');
 
-        return $path;
+        return $this->output($path, '请求成功', STATUS_OK);
     }
 }
