@@ -35,13 +35,12 @@ class Queue implements ShouldQueue
     {
         try{
             $rand_num=$this->random(6,0);
-            Redis::setex($this->email,3600,$rand_num);
+            Redis::setex('email:'.$this->email,3600,$rand_num);
             Mail::send('emails.orders.shipped',['name'=>'cfun','rand_num'=>$rand_num],function($msg){
                 $msg->from('1606548133@qq.com','cfun');
                 $msg->subject('cfun博客邮箱验证');
                 $msg->to($this->email);
             });
-
             echo json_encode(['code'=>200,'msg'=>'Success']);
         }catch (\Exception $exception) {
             echo json_encode(['code'=>0,'msg'=>$exception->getMessage()]);

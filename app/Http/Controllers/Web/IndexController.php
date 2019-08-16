@@ -21,7 +21,9 @@ class IndexController extends Controller
     public function detail(ArticleIdRequest $request)
     {
         $article_id=$request->id;
-        $data=Article::where('id',$article_id)->first();
+        $data=Article::with(['comment'=>function($query){
+            $query->with('replay');
+        }])->where('id',$article_id)->first();
         if($data){
             return $this->output($data, '请求成功', STATUS_OK);
         }else{
@@ -33,20 +35,11 @@ class IndexController extends Controller
     public function list(Request $request)
     {
         $params=$request->only('is_hot','category_id');
-        $hot_article= Article::with('category')
-            ->with('tags')
+        $hot_article= Article::with('tags')
             ->where('status',1)
             ->where($params)
             ->paginate();
         return $this->output($hot_article, '请求成功', STATUS_OK);
     }
-
-    //列表
-//    public function search(Request $request)
-//    {
-//        $params=$request->keyword;
-//        $article= Article::search($params)->paginate();
-//        return $this->output($article, '请求成功', STATUS_OK);
-//    }
 
 }
