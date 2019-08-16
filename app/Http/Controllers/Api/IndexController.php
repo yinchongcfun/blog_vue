@@ -12,6 +12,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Tag;
+use http\Env\Request;
 
 class IndexController extends Controller
 {
@@ -27,5 +28,13 @@ class IndexController extends Controller
     {
         $category= Tag::where('status',1)->get();
         return $this->output($category, '请求成功', STATUS_OK);
+    }
+
+
+    public function uploadImg(Request $request)
+    {
+        $path = $request->file('img')->store('imgs');
+
+        return $path;
     }
 }
