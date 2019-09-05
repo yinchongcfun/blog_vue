@@ -34,7 +34,7 @@ class IndexController extends Controller
 
     public function uploadImg(Request $request)
     {
-        $path = $request->file('file')->store('imgs');
+        $path = $request->file('file')->store('public/imgs');
 
         return $this->output($path, '请求成功', STATUS_OK);
     }
