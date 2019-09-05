@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class IndexController extends Controller
@@ -35,7 +36,7 @@ class IndexController extends Controller
     public function uploadImg(Request $request)
     {
         $path = $request->file('file')->store('public/imgs');
-
+        $path= Storage::url($path);
         return $this->output($path, '请求成功', STATUS_OK);
     }
 }
