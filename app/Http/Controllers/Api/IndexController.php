@@ -43,7 +43,6 @@ class IndexController extends Controller
         return $this->output($path, '请求成功', STATUS_OK);
     }
 
-
     //音乐列表
     public function musicList(Request $request)
     {
@@ -54,4 +53,6 @@ class IndexController extends Controller
             return $this->output(null, '请求失败', ERR_REQUEST);
         }
     }
+
 }
+
