@@ -12,6 +12,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleIdRequest;
 use App\Models\Article;
+use App\Models\Music;
 use Chenhua\MarkdownEditor\MarkdownEditor;
 use Illuminate\Http\Request;
 
@@ -64,5 +65,33 @@ class IndexController extends Controller
         $is_hot=$request->is_hot;
         $data=Article::where('id',$request->id)->update(['is_hot'=>$is_hot]);
         return $this->output($data, '请求成功', STATUS_OK);
+    }
+
+
+    //添加音乐信息
+    public function addMusic(Request $request)
+    {
+        $params=[
+            'name'=>$request->name,
+            'author'=>$request->author,
+            'path'=>$request->title,
+        ];
+        $addMusic=Music::updateOrCreate(['id' => $request->id],$params);
+        if($addMusic){
+            return $this->output(null, '请求成功', STATUS_OK);
+        }else{
+            return $this->output(null, '请求失败', ERR_REQUEST);
+        }
+
+    }
+
+    //上传音乐
+    public function uploadMusic(Request $request)
+    {
+
+        $path = $request->file('music')->store('public/music');
+        $path= Storage::url($path);
+
+        return $this->output($path, '请求成功', STATUS_OK);
     }
 }

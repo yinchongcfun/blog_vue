@@ -13,6 +13,10 @@ Route::group(['namespace' => 'Admin'], function () {
     Route::get('phpinfo', ['uses' => 'IndexController@phpInfo', 'as' => 'admin.phpinfo']);
     //文章添加
     Route::post('add', ['uses' => 'IndexController@add', 'as' => 'admin.add']);
+    //添加音乐信息
+    Route::post('addmusic', ['uses' => 'IndexController@addMusic', 'as' => 'admin.addmusic']);
+    //上传音乐
+    Route::post('uploadmusic', ['uses' => 'IndexController@uploadMusic', 'as' => 'blog.uploadmusic']);
     //文章编辑
     Route::get('detail', ['uses' => 'IndexController@detail', 'as' => 'admin.detail']);
     //删除文章

@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Music;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -40,5 +41,17 @@ class IndexController extends Controller
         $path= Storage::url($path);
 
         return $this->output($path, '请求成功', STATUS_OK);
+    }
+
+
+    //音乐列表
+    public function musicList(Request $request)
+    {
+        $musicList=Music::select('*')->get();
+        if($musicList){
+            return $this->output($musicList, '请求成功', STATUS_OK);
+        }else{
+            return $this->output(null, '请求失败', ERR_REQUEST);
+        }
     }
 }
