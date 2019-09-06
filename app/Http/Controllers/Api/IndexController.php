@@ -46,7 +46,7 @@ class IndexController extends Controller
     //音乐列表
     public function musicList(Request $request)
     {
-        $musicList=Music::select('*')->get();
+        $musicList=Music::select('*')->paginate();
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
         }else{
