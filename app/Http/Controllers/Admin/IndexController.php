@@ -74,7 +74,7 @@ class IndexController extends Controller
         $params=[
             'name'=>$request->name,
             'author'=>$request->author,
-            'path'=>$request->title,
+            'path'=>$request->path,
         ];
         $addMusic=Music::updateOrCreate(['id' => $request->id],$params);
         if($addMusic){
@@ -82,7 +82,6 @@ class IndexController extends Controller
         }else{
             return $this->output(null, '请求失败', ERR_REQUEST);
         }
-
     }
 
     //上传音乐
