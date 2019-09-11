@@ -12,11 +12,9 @@ namespace App\Models;
 class Music extends BaseModel
 {
 
-
-    protected $guarded = [];
-
     protected $table = 'music';
 
+    protected $guarded = [];
 
 
 }

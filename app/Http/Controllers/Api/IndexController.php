@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Service\HelpService;
 use App\Models\Category;
 use App\Models\Music;
 use App\Models\Tag;
@@ -46,7 +47,11 @@ class IndexController extends Controller
     //音乐列表
     public function musicList(Request $request)
     {
-        $musicList=Music::select('*')->paginate();
+        $musicList=Music::select('*')->paginate(10);
+        $help=new HelpService();
+        foreach ($musicList as $value){
+            $value->path= $help->apiCurl(config('music.music.url'),$value->music_id);
+        }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
         }else{
@@ -54,5 +59,5 @@ class IndexController extends Controller
         }
     }
 
-}
 
+}
