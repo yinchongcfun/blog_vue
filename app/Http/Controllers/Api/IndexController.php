@@ -50,6 +50,7 @@ class IndexController extends Controller
     {
         if(Redis::get('music')){
             $musicList= Redis::get('music');
+            $musicList=json_decode($musicList);
         }else{
             $musicList=Music::select('*')->paginate(10);
             $help=new HelpService();
@@ -60,7 +61,7 @@ class IndexController extends Controller
                 ];
                 $value->path= $help->apiCurl('http://api.imjad.cn/cloudmusic',$para);
             }
-            Redis::setex('music',7200,$musicList);
+            Redis::setex('music',7200,json_decode($musicList));
         }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
