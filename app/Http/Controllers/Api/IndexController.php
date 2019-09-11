@@ -50,7 +50,8 @@ class IndexController extends Controller
         $musicList=Music::select('*')->paginate(10);
         $help=new HelpService();
         foreach ($musicList as $value){
-            $value->path= $help->apiCurl(config('music.music.url'),$value->music_id);
+            $path= $help->apiCurl(config('music.music.url'),$value->music_id);
+            dd($path);
         }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
