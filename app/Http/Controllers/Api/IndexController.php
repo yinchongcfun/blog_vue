@@ -15,6 +15,7 @@ use App\Models\Category;
 use App\Models\Music;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -47,14 +48,19 @@ class IndexController extends Controller
     //音乐列表
     public function musicList()
     {
-        $musicList=Music::select('*')->paginate(10);
-        $help=new HelpService();
-        foreach ($musicList as $value){
-            $para=[
-                'type'=>'song',
-                'id'=>$value->music_id
-            ];
-            $value->path= $help->apiCurl('http://api.imjad.cn/cloudmusic',$para);
+        if(Redis::get('music')){
+            $musicList= Redis::get('music');
+        }else{
+            $musicList=Music::select('*')->paginate(10);
+            $help=new HelpService();
+            foreach ($musicList as $value){
+                $para=[
+                    'type'=>'song',
+                    'id'=>$value->music_id
+                ];
+                $value->path= $help->apiCurl('http://api.imjad.cn/cloudmusic',$para);
+            }
+            Redis::set('music',$musicList,7200);
         }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
