@@ -60,7 +60,7 @@ class IndexController extends Controller
                 ];
                 $value->path= $help->apiCurl('http://api.imjad.cn/cloudmusic',$para);
             }
-            Redis::set('music',$musicList,7200);
+            Redis::setex('music',7200,$musicList);
         }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
