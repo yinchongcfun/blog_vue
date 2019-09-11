@@ -45,13 +45,16 @@ class IndexController extends Controller
     }
 
     //音乐列表
-    public function musicList(Request $request)
+    public function musicList()
     {
         $musicList=Music::select('*')->paginate(10);
         $help=new HelpService();
         foreach ($musicList as $value){
-            $path= $help->apiCurl(config('music.music.url'),$value->music_id);
-            dd($path);
+            $para=[
+                'type'=>'song',
+                'id'=>$value->music_id
+            ];
+            $value->path= $help->apiCurl('http://api.imjad.cn/cloudmusic',$para);
         }
         if($musicList){
             return $this->output($musicList, '请求成功', STATUS_OK);
