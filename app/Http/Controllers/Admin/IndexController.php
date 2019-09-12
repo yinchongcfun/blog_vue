@@ -74,7 +74,7 @@ class IndexController extends Controller
         $params=[
             'name'=>$request->name,
             'author'=>$request->author,
-            'path'=>$request->path,
+            'music_id'=>$request->music_id,
         ];
         $addMusic=Music::updateOrCreate(['id' => $request->id],$params);
         if($addMusic){
