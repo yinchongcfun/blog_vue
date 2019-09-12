@@ -42,7 +42,7 @@ class IndexController extends Controller
         } elseif ($hot != 1 && Redis::get('list')) {
             $hostList = json_decode(Redis::get('list'));
         } else {
-            $hostList = Article::with('tags')->where('status', 1)->where($params)->paginate();
+            $hostList =Article::select('id','title','tag_id')->with('tags')->where('status', 1)->where($params)->paginate();
             if ($hot) {
                 Redis::setex('hot_list', 7200, json_encode($hostList));
             } else {
