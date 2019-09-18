@@ -14,8 +14,6 @@
 </head>
 <body>
 <div style="margin:0 auto;">
-
-
         <form method="post" action="{{route('admin.gethtml')}}"  >
             <div id="doc-content">
                 {!!$content!!}

@@ -44,9 +44,9 @@ class IndexController extends Controller
         } else {
             $hostList =Article::select('id','title','desc','cover')->with('tags')->where('status', 1)->where($params)->paginate();
             if ($hot) {
-                Redis::setex('hot_list', 7200, json_encode($hostList));
+                Redis::setex('hot_list', 120, json_encode($hostList));
             } else {
-                Redis::setex('list', 7200, json_encode($hostList));
+                Redis::setex('list', 120, json_encode($hostList));
             }
         }
         return $this->output($hostList, '请求成功', STATUS_OK);
