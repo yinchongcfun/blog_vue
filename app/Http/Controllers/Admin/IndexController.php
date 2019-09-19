@@ -31,7 +31,7 @@ class IndexController extends Controller
             'title'=>$request->title,
             'content'=>$content,
             'tags'=>$request->tags ?? '',
-            'cover'=>$request->cover ?? '',
+            'cover'=>$request->cover.'imageslim' ?? '',
             'desc'=>$request->desc ?? ''
         ];
         $article=Article::updateOrCreate(['id' => $request->id],$params);
