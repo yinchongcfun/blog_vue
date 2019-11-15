@@ -31,7 +31,7 @@ class IndexController extends Controller
             'title'=>$request->title,
             'content'=>$content,
             'tags'=>$request->tags ?? '',
-            'cover'=>$request->cover.'imageslim' ?? '',
+            'cover'=>$request->cover.'?imageslim' ?? '',
             'desc'=>$request->desc ?? ''
         ];
         $article=Article::updateOrCreate(['id' => $request->id],$params);
@@ -56,7 +56,7 @@ class IndexController extends Controller
 
     public function delete(ArticleIdRequest $request)
     {
-        $data=Article::where('id',$request->id)->delete();
+        $data=Article::where('id',$request->id)->updte(['status'=>0]);
         return $this->output($data, '请求成功', STATUS_OK);
     }
 
